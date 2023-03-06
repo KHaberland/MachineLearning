@@ -18,4 +18,18 @@ for i in range (train_set_count):
 	 train_output.append(op)
 for i in range(20):
 		 print(train_input[i], train_output[i])
+
+#Тренировка
+
+predictor = LinearRegression() 
+predictor.fit(X=train_input, y=train_output)
+
+#Прогнозирование
+X_TEST = [[10,20,30]] 
+outcome = predictor.predict(X=X_TEST) 
+coefficients = predictor.coef_
+
+print('Outcome: ', outcome)
+print('Coefficients: ', coefficients)
+
 	 
